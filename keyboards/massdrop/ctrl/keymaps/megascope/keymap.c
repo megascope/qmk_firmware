@@ -4,28 +4,6 @@ static uint16_t idle_timer;             // Idle LED timeout timer
 static uint8_t idle_second_counter;     // Idle LED seconds counter, counts seconds not milliseconds
 static uint8_t key_event_counter;       // This counter is used to check if any keys are being held
 
-static const char * sendstring_commands[] = {
-    "git init ",
-    "git clone ",
-    "git config --global ",
-    "git add ",
-    "git diff ",
-    "git reset ",
-    "git rebase ",
-    "git branch -b \"",
-    "git checkout ",
-    "git merge ",
-    "git remote add ",
-    "git fetch ",
-    "git pull ",
-    "git push ",
-    "git commit ",
-    "git status ",
-    "git log ",
-};
-
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
     [DEFAULT] = LAYOUT(
@@ -43,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,            KC_Q,           KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,       KC_RBRC, KC_BSLS, KC_DEL,  KC_END,  KC_PGDN,
         KC_CAPS,           KC_A,           KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,       KC_ENT,
         KC_LSFT,           KC_Z,           KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,                                KC_UP,
-        KC_LCTL,  KC_LGUI, KC_LALT,                   KC_SPC,                             KC_RALT, TT(_FL), TD(TD_APP_YL), KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL,  KC_LGUI, KC_LALT,                   KC_SPC,                             KC_RALT, TT(_FL), KC_APP, KC_RCTL,               KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [_FL] = LAYOUT(
         _______, DM_PLY1, DM_PLY2, _______,  _______, DM_REC1, DM_REC2, _______,  _______,  DM_RSTP, _______, KC_WAKE, KC_SLEP,          KC_MUTE, TERM_ON, TERM_OFF,
@@ -283,9 +261,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     rgb_time_out_seconds = RGB_FAST_MODE_TIME_OUT;
                 }
                 rgb_time_out_fast_mode_enabled = !rgb_time_out_fast_mode_enabled;
-                return false;
-            case G_INIT ... G_LOG:
-                send_string_with_delay(sendstring_commands[keycode - G_INIT], 5);
                 return false;
         }
     }

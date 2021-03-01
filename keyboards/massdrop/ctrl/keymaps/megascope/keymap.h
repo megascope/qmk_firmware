@@ -51,12 +51,6 @@ enum layout_names {
     _ML,         // Mouse Layout: Mouse Keys and mouse movement
 };
 
-enum tapdance_keycodes {
-    TD_LGUI_ML = 0,     // Tap dance key to switch to mouse layer _ML
-    TD_APP_YL,
-    TD_CTRL_TERM,       // Tap dance key to open terminal on LCTRL double press
-};
-
 enum ctrl_keycodes {
     U_T_AUTO = SAFE_RANGE, // USB Extra Port Toggle Auto Detect / Always Active
     U_T_AGCR,              // USB Toggle Automatic GCR control
@@ -72,25 +66,4 @@ enum ctrl_keycodes {
     ROUT_FM,               // RGB timeout fast mode toggle
     COPY_ALL,              // Copy all text using ctrl(a+c)
     TERMINAL,              // CTRL+ALT+T
-};
-
-enum string_macro_keycodes {
-    // The start of this enum should always be equal to end of ctrl_keycodes + 1
-    G_INIT = TERMINAL + 1, // git init
-    G_CLONE,               // git clone
-    G_CONF,                // git config --global
-    G_ADD,                 // git add
-    G_DIFF,                // git diff
-    G_RESET,               // git reset
-    G_REBAS,               // git rebase
-    G_BRANH,               // git branch
-    G_CHECK,               // git checkout
-    G_MERGE,               // git merge
-    G_REMTE,               // git remote add
-    G_FETCH,               // git fetch
-    G_PULL,                // git pull
-    G_PUSH,                // git push
-    G_COMM,                // git commit
-    G_STAT,                // git status
-    G_LOG,                 // git log
 };
