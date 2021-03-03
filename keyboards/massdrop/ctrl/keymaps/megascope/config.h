@@ -45,6 +45,10 @@
 #define RGB_MATRIX_KEYPRESSES         // reacts to keypresses
 // #define RGB_MATRIX_KEYRELEASES        // reacts to keyreleases (instead of keypresses)
 #define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_ALPHAS_MODS // Sets the default mode, if none has been set
+#define RGB_MATRIX_STARTUP_HUE 201 // Sets the default hue value, if none has been set
+#define RGB_MATRIX_STARTUP_SAT 255 // Sets the default saturation value, if none has been set
+#define RGB_MATRIX_STARTUP_VAL 128 // Sets the default brightness value, if none has been set
+#define RGB_MATRIX_STARTUP_SPD 43
 // #define RGBLIGHT_HUE_STEP 12        // Units to step when in/decreasing hue
 // #define RGBLIGHT_SAT_STEP 25        // Units to step when in/decreasing saturation
 // #define RGBLIGHT_VAL_STEP 12        // Units to step when in/decreasing value (brightness)
@@ -77,8 +81,8 @@
 // This list in in the correct mode order. Next mode is the following line, previous mode is previous line. Loops around.
 // #define DISABLE_RGB_MATRIX_SOLID_COLOR                   // Static single hue, no speed support
 // #define DISABLE_RGB_MATRIX_ALPHAS_MODS                   // Static dual hue, speed is hue for secondary hue
-// #define DISABLE_RGB_MATRIX_GRADIENT_UP_DOWN              // Static gradient top to bottom, speed controls how much gradient changes
-#define DISABLE_RGB_MATRIX_BREATHING                     // Single hue brightness cycling animation
+#define DISABLE_RGB_MATRIX_GRADIENT_UP_DOWN              // Static gradient top to bottom, speed controls how much gradient changes
+// #define DISABLE_RGB_MATRIX_BREATHING                     // Single hue brightness cycling animation
 #define DISABLE_RGB_MATRIX_BAND_SAT                      // Single hue band fading saturation scrolling left to right
 #define DISABLE_RGB_MATRIX_BAND_VAL                      // Single hue band fading brightness scrolling left to right
 #define DISABLE_RGB_MATRIX_BAND_PINWHEEL_SAT             // Single hue 3 blade spinning pinwheel fades saturation
@@ -96,10 +100,10 @@
 #define DISABLE_RGB_MATRIX_DUAL_BEACON                   // Full gradient spinning around center of keyboard
 #define DISABLE_RGB_MATRIX_RAINBOW_BEACON                // Full tighter gradient spinning around center of keyboard
 #define DISABLE_RGB_MATRIX_RAINBOW_PINWHEELS             // Full dual gradients spinning two halfs of keyboard
-// #define DISABLE_RGB_MATRIX_RAINDROPS                     // Randomly changes a single key's hue
-// #define DISABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS           // Randomly changes a single key's hue and saturation
+#define DISABLE_RGB_MATRIX_RAINDROPS                     // Randomly changes a single key's hue
+#define DISABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS           // Randomly changes a single key's hue and saturation
 // =================================================== Requires RGB_MATRIX_FRAMEBUFFER_EFFECTS =============================================================
-// #define DISABLE_RGB_MATRIX_TYPING_HEATMAP                // How hot is your WPM!
+#define DISABLE_RGB_MATRIX_TYPING_HEATMAP                // How hot is your WPM!
 #define DISABLE_RGB_MATRIX_DIGITAL_RAIN                  // That famous computer simulation
 // =================================================== RGB_MATRIX_KEYPRESSES OR RGB_MATRIX_KEYRELEASES =====================================================
 // #define DISABLE_RGB_MATRIX_SOLID_REACTIVE                // Static single hue, pulses keys hit to shifted hue then fades to current hue
@@ -109,7 +113,7 @@
 #define DISABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS          // Hue & value pulse the same column and row of a single key hit then fades value out
 #define DISABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS     // Hue & value pulse the same column and row of multiple key hits then fades value out
 #define DISABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS          // Hue & value pulse away on the same column and row of a single key hit then fades value out
-#define DISABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS     // Hue & value pulse away on the same column and row of multiple key hits then fades value out
+// #define DISABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS     // Hue & value pulse away on the same column and row of multiple key hits then fades value out
 #define DISABLE_RGB_MATRIX_SPLASH                        // Full gradient & value pulse away from a single key hit then fades value out
 #define DISABLE_RGB_MATRIX_MULTISPLASH                   // Full gradient & value pulse away from multiple key hits then fades value out
 #define DISABLE_RGB_MATRIX_SOLID_SPLASH                  // Hue & value pulse away from a single key hit then fades value out
